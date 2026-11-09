@@ -13,9 +13,5 @@ ro.virtual_ab.enabled=true
 # Fastbootd 可用
 ro.fastbootd.available=true
 
-# A/B slot（让 TWRP 识别为 A/B 设备，启用 slot 切换）
-ro.boot.slot_suffix=_a
-ro.boot.slotsuffix=_a
-
 # 让 TWRP 知道是 A/B 设备，不显示"安装到 boot/recovery 分区"误导选项
 ro.boot.abtable=true

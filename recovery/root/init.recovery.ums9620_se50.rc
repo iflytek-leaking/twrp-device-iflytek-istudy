@@ -5,8 +5,8 @@ import /system/etc/init/servicemanager.recovery.rc
 on init
     export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw
     setprop crypto.ready 1
-    # 让 TWRP 知道当前 slot，避免 A/B 操作时找不到分区
-    setprop ro.boot.slot_suffix _a
+    # Never hardcode the slot: on a unit running from _b this makes TWRP
+    # read and write _a. androidboot.slot_suffix comes from the bootloader.
 
 on post-fs
     # 触摸屏 + 振动器内核模块（insmod 顺序：先 ocp96011 再 ts，避免 i2c 冲突）
